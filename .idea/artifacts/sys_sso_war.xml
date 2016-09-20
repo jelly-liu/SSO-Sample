@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="sys-sso:war">
+    <output-path>$PROJECT_DIR$/sys-sso/target</output-path>
+    <root id="archive" name="sys-sso.war">
+      <element id="artifact" artifact-name="sys-sso:war exploded" />
+    </root>
+  </artifact>
+</component>

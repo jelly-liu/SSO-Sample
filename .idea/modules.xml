@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/sso-sample.iml" filepath="$PROJECT_DIR$/sso-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sys-sso/sys-sso.iml" filepath="$PROJECT_DIR$/sys-sso/sys-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sys1/sys1.iml" filepath="$PROJECT_DIR$/sys1/sys1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sys2/sys2.iml" filepath="$PROJECT_DIR$/sys2/sys2.iml" />
+    </modules>
+  </component>
+</project>
