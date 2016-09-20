@@ -4,9 +4,9 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/sys-sso" />
     <file type="web" url="file://$PROJECT_DIR$/sys1" />
     <file type="web" url="file://$PROJECT_DIR$/sys2" />
+    <file type="web" url="file://$PROJECT_DIR$/sys3-sso" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

@@ -4,7 +4,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="sys-sso" />
+          <element id="module-output" name="sys3-sso" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.4" />
@@ -31,9 +31,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/sys-sso/target/sys-sso/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/sys3-sso/target/sys-sso/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="sys-sso/web/Web" />
+      <element id="javaee-facet-resources" facet="sys3-sso/web/Web" />
     </root>
   </artifact>
 </component>
