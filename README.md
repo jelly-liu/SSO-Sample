@@ -1,6 +1,6 @@
 # SSO-Sample
 An sample show how SSO system works  
-The project include three modules, sys1, sys2, sys3-sso
+The project include 4 modules, sys1, sys2(no usefull already), sys3-sso, sys-common
 
 # How to run  
 0. config your hosts on windows 10, hosts path is C:\Windows\System32\drivers\etc\hosts  
