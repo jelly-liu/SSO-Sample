@@ -3,8 +3,6 @@
 <html>
 <body>
 <h2>Hello from guest!</h2>
-<ul>
-    <li><a href="www.sys2.com">goSys2</a></li>
-</ul>
+<a href="/admin">accessAdmin</a>
 </body>
 </html>

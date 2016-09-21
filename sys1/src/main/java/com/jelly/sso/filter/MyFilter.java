@@ -1,6 +1,9 @@
 package com.jelly.sso.filter;
 
-import com.jelly.sso.util.Const;
+import com.jelly.sso.module.GlobalConf;
+import com.jelly.sso.module.User;
+import com.jelly.sso.util.HttpUtil;
+import com.jelly.sso.util.StringUtil;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -12,13 +15,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLEncoder;
-import java.nio.charset.Charset;
 
 /**
  * Created by jelly on 2016-9-20.
  */
 public class MyFilter implements Filter {
     private static final Logger log = LoggerFactory.getLogger(MyFilter.class);
+
+    enum Type {
+        WITHOUT_TOKEN, TOKEN_VALID, TOKEN_INVALID;
+    }
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -32,15 +38,29 @@ public class MyFilter implements Filter {
 
         String contextPath = req.getServletPath();
         log.debug("filter, servletPath={}", contextPath);
+        String requestURL = req.getRequestURL().toString();
+        log.debug("filter, requestURL={}", requestURL);
 
-        if(StringUtils.equals(contextPath, "/") || !StringUtils.startsWith(contextPath, "/admin")){
-            filterChain.doFilter(servletRequest, servletResponse);
-        }else{
-            if(isLoginOn(req, res)){
+        Type type = validToken(req, res);
+        switch (type){
+            case TOKEN_VALID:{
                 filterChain.doFilter(servletRequest, servletResponse);
-            }else{
-                String ssoUrl = generateSSOUrl(req);
-                res.sendRedirect(ssoUrl);
+                break;
+            }
+            case TOKEN_INVALID:{
+                res.sendRedirect(generateSSOUrl(req));
+                break;
+            }
+            case WITHOUT_TOKEN:{
+                if(StringUtils.equals(contextPath, "/") || !StringUtils.startsWith(contextPath, "/admin")){
+                    filterChain.doFilter(servletRequest, servletResponse);
+                }else{
+                    if(isLoginOnByCookie(req, res)){
+                        filterChain.doFilter(servletRequest, servletResponse);
+                    }else{
+                        res.sendRedirect(generateSSOUrl(req));
+                    }
+                }
             }
         }
     }
@@ -50,28 +70,29 @@ public class MyFilter implements Filter {
 
     }
 
-    private String generateSSOUrl(HttpServletRequest req){
-        String ssoUrl = "";
-        try {
-            ssoUrl = Const.SYS_SSO_URL + "?";
-            String loginId = req.getParameter(Const.LOGIN_ID);
-            if(StringUtils.isNotEmpty(loginId))ssoUrl += Const.LOGIN_ID + "=" + loginId;
-            ssoUrl += "&" + Const.RETURN_URL + "=" + URLEncoder.encode(req.getRequestURI(), "UTF-8");
-        }catch (Exception e){
-            log.error("generate sso url error", e);
+    private Type validToken(HttpServletRequest req, HttpServletResponse res) throws IOException {
+        String token = req.getParameter(GlobalConf.PARAM_Token);
+
+        if (StringUtils.isNotEmpty(token)) {
+            log.debug("find token in url parameter, token={}", token);
+            User user = HttpUtil.validToken(token);
+            if (user == null) {
+                return Type.TOKEN_INVALID;
+            } else {
+                Cookie tokenCookie = new Cookie(GlobalConf.PARAM_Token, token);
+                Cookie userCookie = new Cookie(GlobalConf.PARAM_Token_User, StringUtil.encryptEncode(user.toJson()));
+                addCookie(res, new Cookie[]{tokenCookie, userCookie});
+                req.setAttribute(GlobalConf.PARAM_Token, token);
+                req.getSession().setAttribute(GlobalConf.PARAM_Token_User, user);
+                return Type.TOKEN_VALID;
+            }
         }
-        return ssoUrl;
+
+        return Type.WITHOUT_TOKEN;
     }
 
-    private boolean isLoginOn(HttpServletRequest req, HttpServletResponse res){
-        String returnFromSSOStr = req.getParameter(Const.RETURN_FROM_SSO);
-        if(StringUtils.isNotEmpty(returnFromSSOStr)){
-            String loginValue = req.getParameter(Const.LOGIN_ID);
-            //TODO, call SSO valid interface to check token
-        }
-
+    private boolean isLoginOnByCookie(HttpServletRequest req, HttpServletResponse res) throws IOException {
         Cookie[] cookies = req.getCookies();
-
         //check from cookies
         if(ArrayUtils.isEmpty(cookies)){
             return false;
@@ -81,14 +102,33 @@ public class MyFilter implements Filter {
             String name = cookie.getName();
             String value = cookie.getValue();
             log.debug("check login on, from cookie, name={}, value={}", name, value);
-            if(StringUtils.equals(name, Const.LOGIN_ID)){
-                if(StringUtils.isNotEmpty(value)){
-                    log.debug("check login on, from cookie, login on already, find login on, name={}, value={}", name, value);
-                    return true;
-                }
+            if(StringUtils.equals(name, GlobalConf.PARAM_Token)){
+                req.setAttribute(name, value);
+                return true;
             }
         }
 
         return false;
+    }
+
+    private String generateSSOUrl(HttpServletRequest req){
+        String ssoUrl = "";
+        try {
+            ssoUrl = GlobalConf.SSO_SERVER_LOGIN_ON_URL + "?";
+            String requestURL = req.getRequestURL().toString();
+            requestURL = URLEncoder.encode(requestURL, "UTF-8");
+            ssoUrl += GlobalConf.PARAM_RETURN_RUL + "=" + requestURL;
+        }catch (Exception e){
+            log.error("generate sso url error", e);
+        }
+        return ssoUrl;
+    }
+
+    private void addCookie(HttpServletResponse res, Cookie[] cookies){
+        for(Cookie cookie : cookies){
+            cookie.setMaxAge(GlobalConf.Token_Expired_Time_Seconds);
+            cookie.setPath("/");
+            res.addCookie(cookie);
+        }
     }
 }

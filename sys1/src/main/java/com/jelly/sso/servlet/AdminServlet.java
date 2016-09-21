@@ -1,5 +1,8 @@
 package com.jelly.sso.servlet;
 
+import com.jelly.sso.module.GlobalConf;
+import com.jelly.sso.util.Const;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +20,6 @@ public class AdminServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().write("hello from AdminServlet");
+        req.getRequestDispatcher(GlobalConf.path_admin + "adminHello.jsp").forward(req, resp);
     }
 }

@@ -8,7 +8,8 @@
     <modules>
         <module>sys1</module>
         <module>sys2</module>
-        <module>sys-sso</module>
+        <module>sys3-sso</module>
+        <module>sys-common</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -17,15 +18,13 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jetty.version>7.9</jetty.version>
-        <junit.version>4.11</junit.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <version>4.11</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -47,6 +46,16 @@
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-jsp</artifactId>
             <version>9.2.19.v20160908</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.7</version>
         </dependency>
     </dependencies>
 

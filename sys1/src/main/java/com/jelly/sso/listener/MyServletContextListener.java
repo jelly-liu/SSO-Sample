@@ -16,9 +16,7 @@ public class MyServletContextListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        ServletContext servletContext = servletContextEvent.getServletContext();
-        servletContext.setAttribute(Const.SYS_NAME_KEY, Const.SYS_NAME);
-        log.debug("ServletContext init, sysName={}", Const.SYS_NAME);
+        log.debug("ServletContext init");
     }
 
     @Override

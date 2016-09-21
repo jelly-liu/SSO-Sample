@@ -6,14 +6,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>sys-sso</artifactId>
+    <artifactId>sys3-sso</artifactId>
     <packaging>war</packaging>
-    <name>sys-sso Maven Webapp</name>
+    <name>sys3-sso Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
 
     </dependencies>
     <build>
-        <finalName>sys-sso</finalName>
+        <finalName>sys3-sso</finalName>
     </build>
 </project>

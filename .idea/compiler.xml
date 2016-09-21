@@ -22,16 +22,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="sys-sso" />
+        <module name="sys-common" />
         <module name="sys1" />
         <module name="sys2" />
+        <module name="sys3-sso" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="sso-sample" target="1.8" />
-      <module name="sys-sso" target="1.8" />
+      <module name="sys-common" target="1.8" />
       <module name="sys1" target="1.8" />
       <module name="sys2" target="1.8" />
+      <module name="sys3-sso" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
