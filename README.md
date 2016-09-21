@@ -10,7 +10,7 @@ The project include 4 modules, sys1, sys2(no usefull already), sys3-sso, sys-com
 1. run StartSys1.java  
     this will start sys1, and sys2  
 2. run StartSys3SSO.java  
-    this will start sso server  
+    this will start sys3-sso server  
 3. access http://www.sys1.com:9091 or http://www.sys2.com:9092 from browser  
     http://www.sys1.com:9091  
     http://www.sys2.com:9092  
