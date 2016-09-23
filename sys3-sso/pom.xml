@@ -12,6 +12,11 @@
     <url>http://maven.apache.org</url>
     <dependencies>
 
+        <dependency>
+            <groupId>com.jelly</groupId>
+            <artifactId>sys-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>sys3-sso</finalName>

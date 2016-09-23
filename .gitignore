@@ -1,5 +1,5 @@
-.idea/*
+.idea
 target
 sys1/target
 sys2/target
-sys-sso/target
+sys3-sso/target
