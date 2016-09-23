@@ -16,6 +16,9 @@
     </style>
 </head>
 <body>
+<%
+    out.write();
+%>
 <h2>SSO User Login</h2><hr/>
 <form action="/loginOn" method="post">
     <input type="hidden" name="returnURL" value="${returnURL}"/>
