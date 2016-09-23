@@ -1,7 +1,6 @@
 package com.jelly.sso.servlet;
 
-import com.jelly.sso.module.GlobalConf;
-import com.jelly.sso.util.Const;
+import com.jelly.sso.util.GlobalConf;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -1,6 +1,5 @@
 package com.jelly.sso.util;
 
-import com.jelly.sso.module.GlobalConf;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

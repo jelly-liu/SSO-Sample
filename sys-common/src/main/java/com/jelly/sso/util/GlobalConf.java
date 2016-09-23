@@ -1,4 +1,4 @@
-package com.jelly.sso.module;
+package com.jelly.sso.util;
 
 import java.nio.charset.Charset;
 
@@ -18,6 +18,6 @@ public class GlobalConf {
     public static final String path_pages = "/WEB-INF/pages/";
     public static final String path_admin = "/WEB-INF/pages/admin/";
 
-    public static final String SSO_SERVER_LOGIN_ON_URL = "http://www.sys3-sso.com:9093/loginOn";
-    public static final String SSO_SERVER_TOKEN_VALID_URL = "http://www.sys3-sso.com:9093/tokenValid";
+    public static final String SSO_SERVER_LOGIN_ON_URL = "http:s//www.sys3-sso.com:9093/loginOn";
+    public static final String SSO_SERVER_TOKEN_VALID_URL = "https://www.sys3-sso.com:9093/tokenValid";
 }

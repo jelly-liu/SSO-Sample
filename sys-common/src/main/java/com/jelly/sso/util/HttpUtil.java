@@ -1,16 +1,11 @@
 package com.jelly.sso.util;
 
 import com.google.gson.Gson;
-import com.jelly.sso.module.GlobalConf;
 import com.jelly.sso.module.User;
-import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

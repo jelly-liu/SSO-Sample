@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="sys2:war">
+  <artifact type="war" build-on-make="true" name="sys2:war">
     <output-path>$PROJECT_DIR$/sys2/target</output-path>
     <root id="archive" name="sys2.war">
       <element id="artifact" artifact-name="sys2:war exploded" />

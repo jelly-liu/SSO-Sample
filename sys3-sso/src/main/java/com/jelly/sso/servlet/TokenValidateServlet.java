@@ -1,6 +1,6 @@
 package com.jelly.sso.servlet;
 
-import com.jelly.sso.module.GlobalConf;
+import com.jelly.sso.util.GlobalConf;
 import com.jelly.sso.module.User;
 import com.jelly.sso.util.TokenDb;
 import org.slf4j.Logger;

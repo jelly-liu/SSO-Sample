@@ -1,6 +1,6 @@
 package com.jelly.sso.servlet;
 
-import com.jelly.sso.module.GlobalConf;
+import com.jelly.sso.util.GlobalConf;
 import com.jelly.sso.module.User;
 import com.jelly.sso.util.*;
 import org.apache.commons.lang3.StringUtils;
@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.UUID;
 
 /**

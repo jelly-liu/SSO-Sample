@@ -2,7 +2,6 @@ package com.jelly.sso.util;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import com.jelly.sso.module.GlobalConf;
 import com.jelly.sso.module.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
