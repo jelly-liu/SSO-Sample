@@ -1,48 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="199f81c5-81d2-40c9-ac79-2d72e277764c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_javax_servlet_jsp_api_2_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_9_3_11_v20160721.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_3_11_v20160721.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_jsp_9_2_19_v20160908.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_9_3_11_v20160721.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_9_3_11_v20160721.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_9_3_11_v20160721.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_3_11_v20160721.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_webapp_9_3_11_v20160721.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_xml_9_3_11_v20160721.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_servlet_jsp_jstl_1_2_0_v201105211821.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_orbit_org_eclipse_jdt_core_3_8_2_v20130121.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_toolchain_jetty_schemas_3_1_M0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_javax_el_3_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_web_javax_servlet_jsp_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_web_javax_servlet_jsp_jstl_1_2_2.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sys1_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sys1_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sys1_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sys1_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sys2_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sys2_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sys2_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sys2_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sys3_sso_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sys3_sso_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sys3_sso_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sys3_sso_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sso-sample.iml" afterPath="$PROJECT_DIR$/sso-sample.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-common/src/main/java/com/jelly/sso/util/HttpUtil.java" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/jelly/sso/util/HttpUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-common/src/main/java/com/jelly/sso/util/StringUtil.java" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/jelly/sso/util/StringUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-common/sys-common.iml" afterPath="$PROJECT_DIR$/sys-common/sys-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys1/src/main/java/com/jelly/sso/filter/MyFilter.java" afterPath="$PROJECT_DIR$/sys1/src/main/java/com/jelly/sso/filter/MyFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys1/src/main/java/com/jelly/sso/servlet/AdminServlet.java" afterPath="$PROJECT_DIR$/sys1/src/main/java/com/jelly/sso/servlet/AdminServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys1/sys1.iml" afterPath="$PROJECT_DIR$/sys1/sys1.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys2/sys2.iml" afterPath="$PROJECT_DIR$/sys2/sys2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys3-sso/src/main/java/com/jelly/sso/StartSys3SSO.java" afterPath="$PROJECT_DIR$/sys3-sso/src/main/java/com/jelly/sso/StartSys3SSO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys3-sso/src/main/java/com/jelly/sso/servlet/LoginOnServlet.java" afterPath="$PROJECT_DIR$/sys3-sso/src/main/java/com/jelly/sso/servlet/LoginOnServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys3-sso/src/main/java/com/jelly/sso/servlet/TokenValidateServlet.java" afterPath="$PROJECT_DIR$/sys3-sso/src/main/java/com/jelly/sso/servlet/TokenValidateServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys3-sso/src/main/java/com/jelly/sso/util/TokenDb.java" afterPath="$PROJECT_DIR$/sys3-sso/src/main/java/com/jelly/sso/util/TokenDb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys3-sso/src/main/webapp/WEB-INF/pages/loginOn.jsp" afterPath="$PROJECT_DIR$/sys3-sso/src/main/webapp/WEB-INF/pages/loginOn.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys3-sso/sys3-sso.iml" afterPath="$PROJECT_DIR$/sys3-sso/sys3-sso.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sys-common/src/main/java/com/jelly/sso/module/GlobalConf.java" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/jelly/sso/util/GlobalConf.java" />
-    </list>
+    <list default="true" id="199f81c5-81d2-40c9-ac79-2d72e277764c" name="Default" comment="" />
     <ignored path="sso-sample.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/sys-common/target/" />
@@ -77,10 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StartSys3SSO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StartSys3SSO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sys3-sso/src/main/java/com/jelly/sso/StartSys3SSO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="-324">
               <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -89,10 +48,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StartSys1.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StartSys1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sys1/src/main/java/com/jelly/sso/StartSys1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="-136">
               <caret line="16" column="22" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="22" />
               <folding />
             </state>
@@ -1109,12 +1068,12 @@
       <updated>1474600319435</updated>
       <workItem from="1474600321887" duration="1023000" />
       <workItem from="1474601822942" duration="4496000" />
-      <workItem from="1474629898266" duration="3210000" />
+      <workItem from="1474629898266" duration="3607000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8729000" />
+    <option name="totallyTimeSpent" value="9126000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1554" height="912" extended-state="0" />
@@ -1407,21 +1366,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sys1/src/main/java/com/jelly/sso/StartSys1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sys3-sso/src/main/java/com/jelly/sso/StartSys3SSO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="-324">
           <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys1/src/main/java/com/jelly/sso/StartSys1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
