@@ -19,4 +19,7 @@ The project include 4 modules, sys1, sys2(no usefull already), sys3-sso is an ht
 3. access http://www.sys1.com:9091 or http://www.sys2.com:9092 from browser  
     http://www.sys1.com:9091  
     http://www.sys2.com:9092  
-    https://www.sys3-sso.com:9093
+    https://www.sys3-sso.com:9093  
+    
+# SSO workflow  
+![SSO workflow](https://github.com/jelly-liu/SSO-Sample/blob/master/SSO-WORKFLOW.jpg "SSO workflow")  
