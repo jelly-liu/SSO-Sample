@@ -1,7 +1,6 @@
 package com.jelly.sso;
 
 import com.jelly.sso.filter.MyFilter;
-import com.jelly.sso.listener.MyServletContextListener;
 import com.jelly.sso.servlet.AdminServlet;
 import com.jelly.sso.servlet.HelloServlet;
 import org.eclipse.jetty.server.Server;
@@ -9,7 +8,6 @@ import org.eclipse.jetty.webapp.WebAppContext;
 
 import javax.servlet.DispatcherType;
 import java.util.EnumSet;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by jelly on 2016-9-20.
@@ -32,7 +30,6 @@ public class StartSys1 {
         server.setHandler(context);
 
         context.addFilter(MyFilter.class, "/*", EnumSet.of(DispatcherType.REQUEST));
-        context.addEventListener(new MyServletContextListener());
         context.addServlet(HelloServlet.class, "/hello");
         context.addServlet(AdminServlet.class, "/admin");
 
@@ -51,7 +48,6 @@ public class StartSys1 {
         server.setHandler(context);
 
         context.addFilter(MyFilter.class, "/*", EnumSet.of(DispatcherType.REQUEST));
-        context.addEventListener(new MyServletContextListener());
         context.addServlet(HelloServlet.class, "/hello");
         context.addServlet(AdminServlet.class, "/admin");
 

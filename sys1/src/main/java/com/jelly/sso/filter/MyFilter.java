@@ -23,7 +23,7 @@ public class MyFilter implements Filter {
     private static final Logger log = LoggerFactory.getLogger(MyFilter.class);
 
     enum Type {
-        WITHOUT_TOKEN, TOKEN_VALID, TOKEN_INVALID;
+        URL_PARAMETER_WITHOUT_TOKEN, URL_PARAMETER_WITH_TOKEN_AND_VALID, URL_PARAMETER_WITH_TOKEN_BUT_INVALID;
     }
 
     @Override
@@ -41,17 +41,21 @@ public class MyFilter implements Filter {
         String requestURL = req.getRequestURL().toString();
         log.debug("filter, requestURL={}", requestURL);
 
-        Type type = validToken(req, res);
+        Type type = validTokenInUrlParameter(req, res);
         switch (type){
-            case TOKEN_VALID:{
+            case URL_PARAMETER_WITH_TOKEN_AND_VALID:{
                 filterChain.doFilter(servletRequest, servletResponse);
                 break;
             }
-            case TOKEN_INVALID:{
-                res.sendRedirect(generateSSOUrl(req));
+            case URL_PARAMETER_WITH_TOKEN_BUT_INVALID:{
+                if(StringUtils.equals(contextPath, "/") || !StringUtils.startsWith(contextPath, "/admin")){
+                    filterChain.doFilter(servletRequest, servletResponse);
+                }else{
+                    res.sendRedirect(generateSSOUrl(req));
+                }
                 break;
             }
-            case WITHOUT_TOKEN:{
+            case URL_PARAMETER_WITHOUT_TOKEN:{
                 if(StringUtils.equals(contextPath, "/") || !StringUtils.startsWith(contextPath, "/admin")){
                     filterChain.doFilter(servletRequest, servletResponse);
                 }else{
@@ -61,6 +65,7 @@ public class MyFilter implements Filter {
                         res.sendRedirect(generateSSOUrl(req));
                     }
                 }
+                break;
             }
         }
     }
@@ -70,25 +75,26 @@ public class MyFilter implements Filter {
 
     }
 
-    private Type validToken(HttpServletRequest req, HttpServletResponse res) throws IOException {
+    private Type validTokenInUrlParameter(HttpServletRequest req, HttpServletResponse res) throws IOException {
         String token = req.getParameter(GlobalConf.PARAM_Token);
 
+        //valid token through api of SSO service
         if (StringUtils.isNotEmpty(token)) {
             log.debug("find token in url parameter, token={}", token);
             User user = HttpUtil.validToken(token);
             if (user == null) {
-                return Type.TOKEN_INVALID;
+                return Type.URL_PARAMETER_WITH_TOKEN_BUT_INVALID;
             } else {
                 Cookie tokenCookie = new Cookie(GlobalConf.PARAM_Token, token);
                 Cookie userCookie = new Cookie(GlobalConf.PARAM_Token_User, StringUtil.encryptEncode(user.toJson()));
                 addCookie(res, new Cookie[]{tokenCookie, userCookie});
                 req.setAttribute(GlobalConf.PARAM_Token, token);
                 req.getSession().setAttribute(GlobalConf.PARAM_Token_User, user);
-                return Type.TOKEN_VALID;
+                return Type.URL_PARAMETER_WITH_TOKEN_AND_VALID;
             }
         }
 
-        return Type.WITHOUT_TOKEN;
+        return Type.URL_PARAMETER_WITHOUT_TOKEN;
     }
 
     private boolean isLoginOnByCookie(HttpServletRequest req, HttpServletResponse res) throws IOException {
