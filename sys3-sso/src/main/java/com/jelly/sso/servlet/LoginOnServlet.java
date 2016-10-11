@@ -1,18 +1,21 @@
 package com.jelly.sso.servlet;
 
-import com.jelly.sso.util.GlobalConf;
+import com.google.gson.Gson;
 import com.jelly.sso.module.User;
-import com.jelly.sso.util.*;
+import com.jelly.sso.util.Const;
+import com.jelly.sso.util.GlobalConf;
+import com.jelly.sso.util.TokenDb;
+import com.jelly.sso.util.UserDb;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.URLDecoder;
 import java.util.UUID;
 
 /**
@@ -57,12 +60,17 @@ public class LoginOnServlet extends HttpServlet {
         req.setAttribute(Const.error_key, "!!!success!!!");
 
         //redirect to returnUrl
-        if(StringUtils.isEmpty(returnUrl)){
-            log.error("userName and passWord valid, but returnUrl is empty");
-            gotoLoginOn(req, resp);
-            return;
-        }
+//        if(StringUtils.isEmpty(returnUrl)){
+//            log.error("userName and passWord valid, but returnUrl is empty");
+//            gotoLoginOn(req, resp);
+//            return;
+//        }
 
+        Cookie cookie = new Cookie(GlobalConf.PARAM_Token, user.toJson());
+        resp.addCookie(cookie);
+        req.getRequestDispatcher(GlobalConf.path_pages + "loginSuccess.jsp").forward(req, resp);
+
+        /*
         returnUrl = URLDecoder.decode(returnUrl, "UTF-8");
         if(!StringUtils.contains(returnUrl, "?")){
             returnUrl += "?1=1";
@@ -72,6 +80,7 @@ public class LoginOnServlet extends HttpServlet {
 //        String userJsonEncryptEncode = StringUtil.encryptEncode(userJson);
 //        returnUrl += ("&" + GlobalConf.PARAM_TokenValue + "=" + userJsonEncryptEncode);
         resp.sendRedirect(returnUrl);
+        */
     }
 
     private void gotoLoginOn(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

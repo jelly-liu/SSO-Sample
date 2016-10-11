@@ -12,12 +12,14 @@ public class GlobalConf {
     public static final String PARAM_Token_User = "J_TOKEN_USER";
     public static final String PARAM_RETURN_RUL = "returnURL";
 
+    public static final String PARAM_JSONP_CALLBACK = "JSONPCallback";
+
     public static final int Token_Expired_Time_Seconds = 60*30;
 
     public static final String path_web_inf = "/WEB-INF/";
     public static final String path_pages = "/WEB-INF/pages/";
     public static final String path_admin = "/WEB-INF/pages/admin/";
 
-    public static final String SSO_SERVER_LOGIN_ON_URL = "http:s//www.sys3-sso.com:9093/loginOn";
+    public static final String SSO_SERVER_LOGIN_ON_URL = "https://www.sys3-sso.com:9093/loginOn";
     public static final String SSO_SERVER_TOKEN_VALID_URL = "https://www.sys3-sso.com:9093/tokenValid";
 }
