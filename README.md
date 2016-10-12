@@ -8,7 +8,7 @@ The project include 3 modules, sys1, sys3-sso is an https server base on SSL, an
 3, cross domain
 
 # How to make SSO-Sample works  
-0. modify webapp path in sub class, according to your build out path(either absolute or relative)
+0. modify webapp path in sub class, according to your build out path(either absolute or relative)  
     StartSys1.java, StartSys3SSO.java
 0. run the follow command on your windows to create an keystore, the jetty SSL connector will use it  
     keytool -keystore keystore -alias jetty -genkey -keyalg RSA  
