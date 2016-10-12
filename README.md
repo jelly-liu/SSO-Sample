@@ -22,4 +22,4 @@ The project include 4 modules, sys1, sys2(no usefull already), sys3-sso is an ht
     https://www.sys3-sso.com:9093  
     
 # SSO workflow  
-![SSO workflow](https://github.com/jelly-liu/SSO-Sample/blob/master/SSO-WORKFLOW.jpg "SSO workflow")  
+pending...
