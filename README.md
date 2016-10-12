@@ -1,6 +1,11 @@
 # SSO-Sample
 An sample show how SSO system works  
-The project include 4 modules, sys1, sys2(no usefull already), sys3-sso is an https server base on SSL, sys-common
+The project include 3 modules, sys1, sys3-sso is an https server base on SSL, and sys-common
+
+# Features
+1, base on jsonp  
+2, sso server base on SSL  
+3, cross domain
 
 # How to make SSO-Sample works  
 0. modify webapp path in sub class, according to your build out path(either absolute or relative)
