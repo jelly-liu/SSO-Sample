@@ -5,16 +5,26 @@ import com.google.gson.Gson;
 /**
  * Created by jelly on 2016-9-21.
  */
-public class User {
+public class User implements Cloneable{
+    private Long id;
     private String name;
     private String password;
 
     public User() {
     }
 
-    public User(String name, String password) {
+    public User(Long id, String name, String password) {
+        this.id = id;
         this.name = name;
         this.password = password;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -35,5 +45,11 @@ public class User {
 
     public String toJson(){
         return new Gson().toJson(this);
+    }
+
+    @Override
+    public User clone() throws CloneNotSupportedException {
+        User user = (User)super.clone();
+        return user;
     }
 }

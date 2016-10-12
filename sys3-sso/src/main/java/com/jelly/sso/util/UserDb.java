@@ -18,8 +18,8 @@ public class UserDb {
 
     static {
         try{
-            userCache.add(new User("tom", "123"));
-            userCache.add(new User("jerry", "123"));
+            userCache.add(new User(1001L, "tom", "123"));
+            userCache.add(new User(1002L, "jerry", "123"));
         }catch (Exception e){
             log.error("init UsersDd error", e);
         }
@@ -28,7 +28,11 @@ public class UserDb {
     public static User findUser(String userName, String passWord){
         for(User user : userCache){
             if(user.getName().equals(userName) && user.getPassword().equals(passWord)){
-                return user;
+                try {
+                    return user.clone();
+                } catch (Exception e) {
+                    log.error("clone exception", e);
+                }
             }
         }
         return null;

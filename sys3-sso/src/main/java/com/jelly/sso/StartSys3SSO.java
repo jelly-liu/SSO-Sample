@@ -1,5 +1,6 @@
 package com.jelly.sso;
 
+import com.jelly.sso.servlet.JSONPServlet;
 import com.jelly.sso.servlet.LoginOnServlet;
 import com.jelly.sso.servlet.TokenValidateServlet;
 import org.eclipse.jetty.http.HttpVersion;
@@ -65,6 +66,7 @@ public class StartSys3SSO {
 
         context.addServlet(TokenValidateServlet.class, "/tokenValid");
         context.addServlet(LoginOnServlet.class, "/loginOn");
+        context.addServlet(JSONPServlet.class, "/jsonp");
 
         server.start();
         server.join();

@@ -62,15 +62,4 @@ public class HttpUtil {
 
         return null;
     }
-
-    public static User validToken(String token){
-        log.debug("valid token, token={}", token);
-        String content = getContent(GlobalConf.SSO_SERVER_TOKEN_VALID_URL + "?" + GlobalConf.PARAM_Token + "=" + token, "POST", 6000);
-        if(StringUtils.isEmpty(content)){
-            log.debug("valid token, token={}, status=false", token);
-            return null;
-        }
-
-        return new Gson().fromJson(content, User.class);
-    }
 }
